@@ -14,6 +14,7 @@ async function get(url) {
         return post;
       });
   } catch (err) {
+    console.log(err);
     return Promise.reject(err);
   }
 }
@@ -39,6 +40,7 @@ async function post(
         return post;
       });
   } catch (err) {
+    console.log(err);
     return Promise.reject(err);
   }
 }
@@ -64,7 +66,8 @@ async function put(
         return post;
       });
   } catch (err) {
-    Promise.reject(err);
+    console.log(err);
+    return Promise.reject(err);
   }
 }
 
@@ -72,13 +75,13 @@ async function deleteE(url) {
   try {
     await fetch(url, { method: "DELETE" });
   } catch (err) {
-    Promise.reject(err);
+    console.log(err);
+    return Promise.reject(err);
   }
 }
 
 get("https://jsonplaceholder.typicode.com/posts/1");
 post("https://jsonplaceholder.typicode.com/posts");
-Ё;
 put("https://jsonplaceholder.typicode.com/posts/1");
 
 // function http() {
